@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Monitoring Suhu & Kelembapan Udara</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    <!-- Header -->
+    <header>
+  <nav class="navbar">
+    <div class="logo">IoT Monitoring Suhu & Kelembapan Udara</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Fitur</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+  </nav>
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="hero parallax" id="home">
+        <div class="hero-text fade-left hidden">
+            <h1>Monitoring Suhu & Kelembapan Udara Secara <span>Real-time</span></h1>
+            <p>Pantau kondisi lingkungan secara akurat dengan teknologi IoT, dapatkan notifikasi langsung ke Telegram Anda.</p>
+            <a href="#contact" class="cta-btn">Hubungi Kami</a>
+        </div>
+        <div class="hero-img fade-right hidden">
+            <img src="iot.png" alt="IoT Monitoring">
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features fade-up hidden" id="features">
+        <h2>Fitur Utama</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <h3>📡 Real-time Monitoring</h3>
+                <p>Data suhu & kelembapan langsung diperbarui setiap detik.</p>
+            </div>
+            <div class="card">
+                <h3>📲 Notifikasi Telegram</h3>
+                <p>Langsung dapatkan peringatan jika kondisi melebihi batas.</p>
+            </div>
+            <div class="card">
+                <h3>🔋 Hemat Energi</h3>
+                <p>Desain hemat daya untuk penggunaan jangka panjang.</p>
+            </div>
+            <div class="card">
+                <h3>📈 Data History</h3>
+                <p>Simpan & analisis data suhu dan kelembapan dari waktu ke waktu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about fade-left hidden" id="about">
+        <h2>Tentang Proyek</h2>
+        <p>Proyek ini dibuat untuk memudahkan petani dalam pemantauan suhu dan kelembapan lingkungan secara jarak jauh. Dengan teknologi IoT, Anda dapat memantau kondisi secara real-time, menerima notifikasi otomatis, dan menyimpan data untuk analisis lebih lanjut.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact fade-right hidden" id="contact">
+        <h2>Kontak Kami</h2>
+        <p>Ingin tahu lebih lanjut atau mencoba demo? Hubungi kami sekarang.</p>
+        <a href="mailto:rellnihboss26@gmail.com" class="cta-btn">Kirim Email</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 IoT Monitoring Suhu & Kelembapan Udara. All rights reserved.</p>
+    </footer>
+
+    <script>
+    // Scroll animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach(el => observer.observe(el));
+</script>
+<script>
+    // Scroll animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach(el => observer.observe(el));
+
+    // Mouse move parallax
+    document.addEventListener("mousemove", (e) => {
+        const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+        const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+        document.querySelector(".parallax").style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+    });
+</script>
+<script>
+function toggleMenu() {
+    console.log('Toggle menu clicked');
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+
+</body>
+</html>
